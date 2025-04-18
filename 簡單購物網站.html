@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-Tw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>我的購物網站</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer";
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: auto 1fr auto;
+      height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      background: #2c3e50;
+      color: white;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+
+    aside {
+      grid-area: aside;
+      background: #ecf0f1;
+      padding: 1rem;
+    }
+
+    main {
+      grid-area: main;
+      padding: 1rem;
+      background: #fff;
+      overflow-y: auto;
+    }
+
+    footer {
+      grid-area: footer;
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .product-card button {
+      margin-top: 0.5rem;
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background: #2980b9;
+    }
+
+  </style>
+</head>
+<body>
+  
+    <div class="layout">
+    <header>我的購物網站</header>
+
+    <aside>
+      <h3>分類</h3>
+      <ul>
+        <li><a href="#">全部商品</a></li>
+        <li><a href="#">麵包</a></li>
+        <li><a href="#">水果</a></li>
+        <li><a href="#">飲料</a></li>
+        
+      </ul>
+    </aside>
+
+    <main>
+      <div class="product-grid">
+        <div class="product-card">
+            
+            <h3>紅豆麵包</h3>
+            <img src="images/紅豆麵包.png" alt="紅豆麵包"/>
+                <p>NT$32</p>
+                <button onclick="addToCart('紅豆麵包')">加入購物車</button>
+        </div>
+        <div class="product-card">
+            <h3>菠蘿麵包</h3>
+            <img src="images/菠蘿麵包.png" alt="1i 菠蘿麵包"/>
+                <p>NT$30</p>
+                <button onclick="addToCart('菠蘿麵包')">加入購物車</button>
+        </div>
+        
+        <div class="product-card">
+            <h3>奶油小餐包</h3>
+            <img src="images/奶油小餐包.png" alt="奶油小餐包"/>
+                <p>NT$20</p>
+                <button onclick="addToCart('奶油小餐包')">加入購物車</button>
+        </div>
+        
+        <div class="product-card">
+            <h3>蘋果</h3>
+                <p>NT$30</p>
+                <button onclick="addToCart('蘋果')">加入購物車</button>
+        </div>
+        
+        <div class="product-card">
+            <h3>香蕉</h3>
+                <p>NT$25</p>
+                <button onclick="addToCart('香蕉')">加入購物車</button>
+        </div>
+        
+        <div class="product-card">
+            <h3>葡萄</h3>
+                <p>NT$25</p>
+                <button onclick="addToCart('葡萄')">加入購物車</button>
+        </div>
+
+        <div class="product-card">
+            <h3>柳橙汁</h3>
+          <p>NT$50</p>
+          <button onclick="addToCart('柳橙汁')">加入購物車</button>
+        </div>
+
+        <div class="product-card">
+            <h3>紅茶</h3>
+                <p>NT$25</p>
+                <button onclick="addToCart('紅茶')">加入購物車</button>
+        </div>
+
+        <div class="product-card">
+            <h3>奶茶</h3>
+                <p>NT$25</p>
+                <button onclick="addToCart('奶茶')">加入購物車</button>
+        </div>
+
+      </div>
+    </main>
+    <footer>我的購物網站</footer>
+  </div>
+
+  <script>
+    function addToCart(productName) {
+      alert(`已加入購物車：${productName}`);
+    }
+  </script>
+</body>
+</html>
